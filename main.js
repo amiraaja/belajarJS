@@ -79,3 +79,47 @@
 //     console.log(isi)
 //     p.innerHTML = isi
 // })
+
+
+// let taskList = document.getElementById("taskList")
+// let addTaskButton = document.getElementById("addTaskButton")
+// let taskInput = document.getElementById("taskInput")
+
+// addTaskButton.addEventListener('click', function(){
+//     let taskText = taskInput.value
+//     console.log(taskText)
+//     taskList.innerHTML = taskText
+// })
+
+function addTask() {
+    const taskInput = document.getElementById('taskInput');
+    const taskText = taskInput.value.trim();
+
+    if (taskText !== '') {
+        const taskList = document.getElementById('taskList');
+        const li = document.createElement('li');
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'checkbox';
+        checkbox.addEventListener('change', function() {
+            li.classList.toggle('completed', this.checked);
+        });
+
+        const label = document.createElement('label');
+        label.innerText = taskText;
+
+        const deleteBtn = document.createElement('button');  // Changed to button element
+        deleteBtn.innerText = 'X';
+        deleteBtn.addEventListener('click', function() {
+            li.remove();
+        });
+
+        li.appendChild(checkbox);
+        li.appendChild(label);
+        li.appendChild(deleteBtn);  // Append the delete button
+        taskList.appendChild(li);
+
+        taskInput.value = '';
+    }
+}

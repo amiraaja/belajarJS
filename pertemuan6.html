@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- <form onsubmit="return false">
@@ -13,5 +14,14 @@
     
     <p>Hasil Teks <span id="hasil"></span></p>
     <script src="main.js"></script> -->
+
+    <div class="todo-container">
+        <h1>To do List</h1>
+        <input type="text" id="taskInput" placeholder="add your text">
+        <button onclick="addTask()">Submit</button>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
